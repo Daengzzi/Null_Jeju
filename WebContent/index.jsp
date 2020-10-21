@@ -7,5 +7,10 @@
 <title>메인페이지_TEST</title>
 </head>
 <body>
+<<<<<<< HEAD
 </body>
+=======
+	
+</body> 
+>>>>>>> branch 'master' of https://github.com/Mingyoo-Lee/Null_Jeju.git
 </html>
