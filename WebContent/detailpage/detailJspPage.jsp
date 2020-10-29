@@ -1,3 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%@ page import="detailpage.beans.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<c:set var="arr" value='<%=(WriteDTO[])request.getAttribute("list") %>'/>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -26,7 +35,7 @@
     <link rel="stylesheet" href="detailboot2/css/styles.min.css"> 
 
 
-<link href="detailpage.css" rel="stylesheet" type="text/css">
+<link href="detailpage.css?<%=System.currentTimeMillis() %>" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -85,34 +94,7 @@
     
 <!--------------------------------- section 시작 ----------------------------------------------- -->
 
-    <div class="container section"> <!-- 총 section div   -->
-
-        
-        <!-- <div class="row">
-            <div class="" ><img class="img-fluid titleimg" src="//api.cdn.visitjeju.net/photomng/imgpath/201810/17/41209f96-3700-4de3-8545-347a602229e2.jpg" alt="Alt Text"></div>
-            <div class="detail-list">
-                <h1 class="my-4 title">성산일출봉<br></h1>
-                <h1 class="my-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></h1>
-                    
-                <p>#일출 #오름 #경관/포토 #부모</p>
-                <h3 class="my-3">제주를 호흡하고 명상하는 곳"</h3>
-                <ul class="list-unstyled">
-                   <li> 주소 : <span>제주특별자치도 서귀포시 성산읍 일출로 284-12</span></li>
-                    <li> 번호 : <span>(+82) 064-783-0959</span></li>
-               
-                </ul>
-            </div>
-        </div>
-        
-        <h3 class="my-4">Related Projects<br></h3>
-        <div class="row">
-            <div class="col-sm-3 col-md-3 mb-4"><a href="#"><img class="img-fluid" src="http://placehold.it/500x300"></a></div>
-            <div class="col-sm-3 col-md-3 mb-4"><a href="#"><img class="img-fluid" src="http://placehold.it/500x300"></a></div>
-            <div class="col-sm-3 col-md-3 mb-4"><a href="#"><img class="img-fluid" src="http://placehold.it/500x300"></a></div>
-            <div class="col-sm-3 col-md-3 mb-4"><a href="#"><img class="img-fluid" src="http://placehold.it/500x300"></a></div>
-        </div> -->
-
+    <div class="container section">
 
         <!--상세 설명 + 상세이미지 시작  -->
         <div class="container">
@@ -126,35 +108,39 @@
                                     <div class="carousel slide" id="myCarousel">
                                         <!-- Carousel items -->
                                         <div class="carousel-inner">
-
-                                            <div class="active item" data-slide-number="0">
-
-                                            <img src="//api.cdn.visitjeju.net/photomng/imgpath/201810/17/41209f96-3700-4de3-8545-347a602229e2.jpg" class="img1" >
                                             
+                                            <div class="active item" data-slide-number="0">
+                                                <img src="">
                                             </div>
     
                                             <div class="item" data-slide-number="1">
-                                            <img src="//api.cdn.visitjeju.net/photomng/imgpath/201910/18/5a3585cf-d009-4d86-a82d-1ecbe57660c2.jpeg"></div>
+                                                <img src="">
+                                            </div>
     
                                             <div class="item" data-slide-number="2">
-                                            <img src="http://placehold.it/770x300&text=three"></div>
-    
+                                                <img src="http://placehold.it/770x300&text=three">
+                                            </div>
+                                            
                                             <div class="item" data-slide-number="3">
-                                            <img src="http://placehold.it/770x300&text=four"></div>
-    
+                                                <img src="http://placehold.it/770x300&text=four">
+                                            </div>
+                                            
                                             <div class="item" data-slide-number="4">
-                                            <img src="http://placehold.it/770x300&text=five"></div>
-    
+                                                <img src="http://placehold.it/770x300&text=five">
+                                            </div>
+                                            
                                             <div class="item" data-slide-number="5">
-                                            <img src="http://placehold.it/770x300&text=six"></div>
+                                                <img src="http://placehold.it/770x300&text=six">
+                                            </div>
                                         </div><!-- Carousel nav -->
+
                                         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                                             <span class="glyphicon glyphicon-chevron-left"></span>                                       
                                         </a>
                                         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
                                             <span class="glyphicon glyphicon-chevron-right"></span>                                       
                                         </a>                                
-                                        </div>
+                                    </div>
                                 </div>
     
                                 <div class="col-sm-4" id="carousel-text"></div>
@@ -165,20 +151,20 @@
                                       
                                         
                                         <div class="detail-list">
-                                            <h1 class="my-4 title">성산일출봉<br></h1>
+
+                                            <h1 class="my-4 title"><br></h1>
                                             <h1 class="my-3">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></h1>
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>4.5
+                                            </h1>
                                                 
-                                            <p>#일출 #오름 #경관/포토 #부모</p>
-                                            <h3 class="my-3">제주를 호흡하고 명상하는 곳"</h3>
+                                            <p class="tag">#일출 #오름 #경관/포토 #부모</p>
+                                            <h3 class="my-3 introduction">제주를 호흡하고 명상하는 곳"</h3>
                                             <ul class="list-unstyled">
-                                               <li> 주소 : <span>제주특별자치도 서귀포시 성산읍 일출로 284-12</span></li>
-                                                <li> 번호 : <span>(+82) 064-783-0959</span></li>
+                                                <li> 주소 : <span class="address"></span></li>
+                                                <li> 번호 : <span class="phoneno"></span></li>
                                             </ul>
                                            <i class="fas fa-map-marker-alt"></i>
                                         </div>
-
-
 
                                     </div>
     
@@ -193,11 +179,15 @@
                             <!-- Bottom switcher of slider -->
                             <ul class="hide-bullets">
                                 <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-0"><img src="http://placehold.it/170x100&text=one" class="img1"></a>
+                                    <a class="thumbnail" id="carousel-selector-0">
+                                        <img src="">
+                                    </a>
                                 </li>
     
                                 <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/170x100&text=two"></a>
+                                    <a class="thumbnail" id="carousel-selector-1">
+                                        <img src="">
+                                    </a>
                                 </li>
     
                                 <li class="col-sm-2">
@@ -226,36 +216,78 @@
 <!--상세 설명 + 상세이미지 끝  -->
 
 
-        
         <h3 class="my-4">리뷰<br></h3>
 
         <!-- 전체 리뷰 5개씩 페이징, 쓰는란 -->
         <div class="review-wrap-wrap">
         
-         <!-- 리뷰  1개-->
-            <div class="review-wrap">
-                <div>
-                    <span class="username">허하*</span>
-                    <span class="regdate">2020.10.11</span>
-                    <p class="star"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star-half"></i></p>
-                </div>
-        
-                <div class="review-text">
-                    정상에 오르면 너비가 8만여 평에 이르는 분화구를 볼 수 있는데,
-                    그릇처럼 오목한 형태로 안에는 억새 등의 풀이 자라고 있다.
-                    분화구 둘레에는 99개의 고만고만한 봉우리(암석)이 자리하고 있다.
-                </div>
-        
-        
-                <div class="reviewImg">
-                    <img src="//api.cdn.visitjeju.net/photomng/imgpath/201810/17/4b1d0709-9a08-45ad-a42f-ee265f13b157.jpg">
-                    <img src="//api.cdn.visitjeju.net/photomng/imgpath/201810/17/4b1d0709-9a08-45ad-a42f-ee265f13b157.jpg">
-                    <img src="//api.cdn.visitjeju.net/photomng/imgpath/201810/17/4b1d0709-9a08-45ad-a42f-ee265f13b157.jpg">
-                    <img src="//api.cdn.visitjeju.net/photomng/imgpath/201810/17/4b1d0709-9a08-45ad-a42f-ee265f13b157.jpg">
-                </div>
-            </div>
+         <!-- 리뷰가 없을때 -->
+         <c:if test='${fn:length(arr) == 0 }'>
+                <div class="reviewNO">
+                   	리뷰가 없습니다. 리뷰를 등록해주세요. <i class="far fa-frown"></i>
+             	</div>
+         	
+         </c:if>
+       
+       <!-- 게시된 리뷰 목록들  -->
+       <c:if test='${fn:length(arr) != 0 }'>
+            <c:forEach var="element" items="${arr }" varStatus="status">
+            
+            
+            	<div class="review-wrap">
+            
+                
+	                <div>
+	                    <span class="username">${element.rmno }</span>
+	                    <span class="regdate">${element.rdate }</span>
+	                    <p class="star"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+	                            class="fas fa-star-half"></i></p>
+	                </div>
+                   
+                    <button onclick="">수정</button><br>
+                    <button onclick="">삭제</button>
+    		        <!--
+                        <script>
+    					switch (${element.rstar }) {
+						case 0.5:
+							<i class="fas fa-star-half"></i>
+							break;
 
+						default:
+							break;
+						}
+    				
+    				</script>
+                 -->
+                
+                    <!-- 이미지 배열 쓸때 쓸거임  -->
+                    <div class="review-text"> <!-- 리뷰 내용  -->
+	                    ${element.rcontent } 
+	                </div>
+					<div class="reviewImg" style="width: 300px">
+					
+						<!-- <c:forEach var="j" begin="0" end="${fn:length(element.rimg) }">
+							<img style="width: 100%; height: auto" src="${element.rimg[i] }" />
+                        </c:forEach> -->
+                        <img style="width: 100%; height: auto" src="${element.rimg }" />
+                        
+					</div>
+          
+	                
+			            <%-- <c:forEach var="fileDto" items="${fileList }">
+							<c:if test="${fileDto.image == true }">
+								
+							</c:if>
+						</c:forEach> --%>
+					
+					
+					
+            	</div> 
+            	<!-- end 게시된 리뷰 보여기주 -->
+                </c:forEach>
+			</c:if>
+		
+		
             <hr>   
             <h3>리뷰쓰기</h3>
 
@@ -265,71 +297,88 @@
             
                 <div class="review-write">
                     <div class="write-wrap">
+                		
+                		
+                        <div class="username">회원이름</div>
+                		<input type="hidden" name="rmno" value="13">
+                		<input type="hidden" name="rplace" value="50">
+                		
                 
-                        <div class="username">허하영</div>
-                
-                
-                        <!--  별점  시작 -->
-                
+                        <!---------------------  별점  시작 --------------------->
                         <div class="startRadio">
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
+                                <input type="radio" name="rstar" id="" value="0.5">
                                 <span class="startRadio__img"><span class="blind">0.5</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 1.5개</span></span>
+                                <input type="radio" name="rstar" id="" value="1">
+                                <span class="startRadio__img"><span class="blind">1</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 2개</span></span>
+                                <input type="radio" name="rstar" id="" value="1.5">
+                                <span class="startRadio__img"><span class="blind">1.5</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 2.5개</span></span>
+                                <input type="radio" name="rstar" id="" value="2">
+                                <span class="startRadio__img"><span class="blind">2</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 3개</span></span>
+                                <input type="radio" name="rstar" id="" value="2.5">
+                                <span class="startRadio__img"><span class="blind">2.5</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 3.5개</span></span>
+                                <input type="radio" name="rstar" id="" value="3">
+                                <span class="startRadio__img"><span class="blind">3</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 4개</span></span>
+                                <input type="radio" name="rstar" id="" value="3.5">
+                                <span class="startRadio__img"><span class="blind">3.5</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 4.5개</span></span>
+                                <input type="radio" name="rstar" id="" value="4">
+                                <span class="startRadio__img"><span class="blind">4</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 5개</span></span>
+                                <input type="radio" name="rstar" id="" value="4.5">
+                                <span class="startRadio__img"><span class="blind">4.5</span></span>
                             </label>
                             <label class="startRadio__box">
-                                <input type="radio" name="star" id="">
-                                <span class="startRadio__img"><span class="blind">별 5.5개</span></span>
+                                <input type="radio" name="rstar" id=""  value="5">
+                                <span class="startRadio__img"><span class="blind">5</span></span>
                             </label>
                         </div>
-                
-                
-                
                         <!-- 별점 끝 -->
                 
-                        <textarea class="textwrtie" placeholder="리뷰를 남겨주세요!"
-                            style="overflow-x: hidden; overflow-wrap: break-word; ">
-                        </textarea>
+                
+                             
+                        <textarea class="textwrtie" name="rcontent" placeholder="리뷰를 남겨주세요!"
+                            style="overflow-x: hidden; overflow-wrap: break-word; "></textarea>
                             <br>
-                        <i class="fas fa-camera"></i>
-                
-                
+                        
+ 						<button type="button" id="btnAdd"><i class="fas fa-camera"></i></button>
                         <button type="submit" class="review-submit"> 입력 </button>
+                            <div id="files"></div>
+                        <div style="background-color: beige; padding:2px 10px; margin-bottom: 5px; border: 1px solid #000;">
+                            <h4>첨부파일</h4>
+                        </div>
+                	
+  	
+						<script>
+							var i = 0;
+							$("#btnAdd").click(function(){
+								$("#files").append("<div><input type='file' name = 'upfile" +i+ "'/><button type='button' onclick='$(this).parent().remove()'>삭제</button></div>");
+								// i++;
+							});
+						</script>
+		
+                        
+
+
                     </div>
                 
                 </div>
-            </form>
+            </form> <!-- end 리뷰 쓰기 박스 끝 -->
+
 
         </div> <!-- review-wrap-wrap -->
                
@@ -365,5 +414,5 @@
     <script src="assets/js/script.min.js"></script>
 </body>
 
-<!-- <script src="detailpage1.js" type="text/javascript"></script> -->
+<script src="detailpage1.js" type="text/javascript"></script>   <!-- 제주도 API-->
 </html>

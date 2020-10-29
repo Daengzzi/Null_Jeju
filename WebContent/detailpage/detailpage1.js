@@ -17,8 +17,7 @@
 function parseJSON(jsonObj) {
      var items = jsonObj.items;
 
-
-     ////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////////////////
 
      var sum = 0;
 
@@ -29,6 +28,15 @@ function parseJSON(jsonObj) {
 ////////////////////////////////////////////////////////////////////////////////////////////
 
     for (var i = 0; i < items.length; i++) {
+        if(items[i].title=="대정해변(하모해변)"){
+            $('.title').html(items[i].title);
+            $('.address').html(items[i].address);
+            $('.phoneno').html(items[i].phoneno);
+            $('.repPhoto').html(items[i].repPhoto.photoid.imgpath);
+            $('.item img').attr('src', items[i].repPhoto.photoid.imgpath); 
+            $('.thumbnail img').attr('src', items[i].repPhoto.photoid.imgpat);
+        }
+            
         // if(items[i].title == "피크닉메이트"){
             // $('.imgcontainer').find('img').attr('src',row[i].SH_PHOTO);
             // $('.imgcontainer').find('img').css("display","inline-block");
@@ -40,7 +48,7 @@ function parseJSON(jsonObj) {
             // $('#detailPage').find('.container').find('li').eq(4).find('span').eq(1).html(row[i].SH_INFO);
             // $('#detailPage').find('.container').find('li').eq(5).find('span').eq(1).html(row[i].SH_PRIDE);
             // $('#detailPage').find('.container').css("display","inline-block");
-            $('.title').html(items[i].title);
+           
             
             // break;
         // }
