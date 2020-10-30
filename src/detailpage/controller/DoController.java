@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import detailpage.command.Command;
+import detailpage.command.DeleteCommand;
 import detailpage.command.DetailCommand;
 import detailpage.command.WriteCommand;
 
@@ -66,11 +67,19 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "detailJspPage.jsp";
 			break;
+			
 		case "/detailpage/writeOk.do":
 			command = new WriteCommand();
 			command.execute(request, response);
 			viewPage = "writeOk.jsp";
 			break;
+			
+		case "/detailpage/deleteOk.do":
+			command = new DeleteCommand();
+			command.execute(request, response);
+			viewPage = "deleteOk.jsp";
+			break;	
+			
 		}
 		
 		if (viewPage != null) {
@@ -78,5 +87,4 @@ public class DoController extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 	}
-
 }

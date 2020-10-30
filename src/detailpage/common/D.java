@@ -34,9 +34,10 @@ public class D {
 //	
 	
 	
-	public static final String SQL_WRITE_DELETE_BY_UID =
+	public static final String SQL_REVIEW_DELETE_BY_RNO =
 			"DELETE FROM review WHERE rno = ?";
 
+	
 	public static final String SQL_WRITE_UPDATE =
 			"UPDATE test_write SET wr_subject = ?, wr_content = ? WHERE wr_uid = ?";
 	
@@ -68,7 +69,7 @@ public class D {
 			"DELETE FROM test_file WHERE bf_uid = ?";
 
 
-	// 특정 글의(wr_uid) 의 첨부파일(들)을 delete
+	// 특정 글의(wr_uid) 의 첨부파일(들)을 delete 없어도됨 강사님은 글디비랑 이미지디비 따로있어서 쓴것.
 	public static final String SQL_FILE_DELETE_BY_WRUID =
 			"DELETE FROM test_file WHERE wr_uid = ?";
 	

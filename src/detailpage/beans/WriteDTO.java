@@ -11,8 +11,8 @@ public class WriteDTO {
 	private String rdate; // 리뷰 등록한 날짜
 	private int rplace; // 명소번호 -> 명소이름 
 	private double rstar; // 별점 
-	// private String[] rimg; // 리뷰사진 
-	private String rimg; // 리뷰사진 
+	private String[] rimg; // 리뷰사진 
+	//private String rimg; // 리뷰사진 
 //	private String rimg2; // 리뷰사진 2
 //	private String rimg3; // 리뷰사진 3
 //	private String rimg4; // 리뷰사진 4
@@ -30,7 +30,7 @@ public class WriteDTO {
 	//매개변수를 받는 생성자
 
 	public WriteDTO(int rno, int rmno, String rcontent, String rdate, int rplace, double rstar, 
-					String rimg) {
+					String[] rimg) {
 		super();
 		this.rno = rno;
 		this.rmno = rmno;
@@ -97,11 +97,11 @@ public class WriteDTO {
 		}
 		
 		
-		public String getRimg(){
+		public String[] getRimg(){
 			return rimg;
 		}
 		
-		public void setRimg(String rimg) {
+		public void setRimg(String[] rimg) {
 			this.rimg = rimg;
 		}
 		

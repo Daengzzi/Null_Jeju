@@ -28,13 +28,14 @@ function parseJSON(jsonObj) {
 ////////////////////////////////////////////////////////////////////////////////////////////
 
     for (var i = 0; i < items.length; i++) {
-        if(items[i].title=="대정해변(하모해변)"){
+        if(items[i].title == "예초리해변"){
             $('.title').html(items[i].title);
             $('.address').html(items[i].address);
             $('.phoneno').html(items[i].phoneno);
-            $('.repPhoto').html(items[i].repPhoto.photoid.imgpath);
+//            $('.repPhoto').html(items[i].repPhoto.photoid.imgpath);
             $('.item img').attr('src', items[i].repPhoto.photoid.imgpath); 
-            $('.thumbnail img').attr('src', items[i].repPhoto.photoid.imgpat);
+            $('.thumbnail img').attr('src', items[i].repPhoto.photoid.imgpath);
+            $('.introduction').html(items[i].introduction);
         }
             
         // if(items[i].title == "피크닉메이트"){

@@ -91,7 +91,7 @@ public class WriteCommand implements Command {
       
       for (int i = 0; i < fileSystemNames.size(); i++) {
     	  if(i != fileSystemNames.size() - 1) {
-    		  rimg += fileSystemNames.get(i) + "|";    		  
+    		  rimg += fileSystemNames.get(i) + ";";    		  
     	  } else {
     		  rimg += fileSystemNames.get(i);
     	  }

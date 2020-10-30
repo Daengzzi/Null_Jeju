@@ -16,7 +16,7 @@
 
 
  .section{
-
+	/* font-size :14px;  */
     /* background-color: pink;
     position: relative;
     left: 50%;
@@ -25,17 +25,35 @@
     margin-top: 100px;
     width: 1200px; */
     position: relative;
-    top: 71px;
+    top: 90px;
 }
 
 .row h1,.row h3, .row p, .row span, .row li{
    
 }
 
+
 .item img{
    width: 100%;
 }
 
+.miniimg{
+    list-style: none;
+    margin-left: -40px;
+    margin-top: 205px;
+    
+  
+}
+#wek{
+	display: none;
+}
+
+.i1{
+    /* width: 50; */
+    float: left;
+    width: 50%;
+    
+}
 
 /* 상세설명  */
 .detail-list{
@@ -239,7 +257,15 @@
     }
  */
 
-        
+    
+	.li{
+		width: 50%;
+		
+	}    
+
+	#wek{
+	display: block;
+	}
     .review-text{
 
         border: 1px solid red;
@@ -278,7 +304,7 @@
     }
 
     .carousel-inner .item img{
-        height: 500px;
+        height: 600px;
         object-fit: cover;
     }
 

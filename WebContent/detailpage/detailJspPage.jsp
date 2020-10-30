@@ -17,6 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>JEJUMARU</title>
 
+    <link rel="stylesheet" href="detailboot2/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="detailboot2/css/styles.min.css"> 
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
@@ -31,8 +33,6 @@
     <!-- <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'> -->
     <!-- <link rel="stylesheet" href="detailboot/bootstrap/css/bootstrap.min.css"> -->
 
-    <link rel="stylesheet" href="detailboot2/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="detailboot2/css/styles.min.css"> 
 
 
 <link href="detailpage.css?<%=System.currentTimeMillis() %>" rel="stylesheet" type="text/css">
@@ -40,6 +40,18 @@
 
 </head>
 
+	<script>
+	
+		function chkDelete(rno){
+			// 삭제 여부, 다시 확인 하고 진행하기
+			var r = confirm("삭제하시겠습니까?");
+			
+			if(r){
+				location.href = 'deleteOk.do?rno=' + rno;
+			}
+		} // chkDelete
+	
+	</script>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-xl fixed-top bg-white clean-navbar">
@@ -99,6 +111,7 @@
         <!--상세 설명 + 상세이미지 시작  -->
         <div class="container">
             <div id="main_area">
+                <div><button>전체</button><button>카테고리</button><button class="title"></button></div>
                     <!-- Slider -->
                     <div class="row">
                         <div class="col-xs-12" id="slider">
@@ -117,21 +130,21 @@
                                                 <img src="">
                                             </div>
     
-                                            <div class="item" data-slide-number="2">
+                                            <!-- <div class="item" data-slide-number="2">
                                                 <img src="http://placehold.it/770x300&text=three">
                                             </div>
                                             
                                             <div class="item" data-slide-number="3">
                                                 <img src="http://placehold.it/770x300&text=four">
-                                            </div>
-                                            
+                                            </div> -->
+<!--                                             
                                             <div class="item" data-slide-number="4">
                                                 <img src="http://placehold.it/770x300&text=five">
                                             </div>
                                             
                                             <div class="item" data-slide-number="5">
                                                 <img src="http://placehold.it/770x300&text=six">
-                                            </div>
+                                            </div> -->
                                         </div><!-- Carousel nav -->
 
                                         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -143,11 +156,11 @@
                                     </div>
                                 </div>
     
-                                <div class="col-sm-4" id="carousel-text"></div>
+                                <div class="col-sm-4" id="carousel-text">
     
                                 <div id="slide-content" style="display: none;">
 
-                                    <div id="slide-content-0" >
+                                    <div id="slide-content-0">
                                       
                                         
                                         <div class="detail-list">
@@ -157,56 +170,53 @@
                                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>4.5
                                             </h1>
                                                 
-                                            <p class="tag">#일출 #오름 #경관/포토 #부모</p>
-                                            <h3 class="my-3 introduction">제주를 호흡하고 명상하는 곳"</h3>
-                                            <ul class="list-unstyled">
-                                                <li> 주소 : <span class="address"></span></li>
-                                                <li> 번호 : <span class="phoneno"></span></li>
-                                            </ul>
-                                           <i class="fas fa-map-marker-alt"></i>
+                                            <!-- <p class="tag">#일출 #오름 #경관/포토 #부모</p> -->
+
+                                            <h3 class="my-3 introduction"></h3>
+                                            <div>주소 : <span class="address"></span></div>
+                                            <div>번호 : <span class="phoneno"></span></div>
+                                            <!-- <ul class="list-unstyled">
+                                            
+                                                <li> </span></li>
+                                                <li> </span></li>
+                                            </ul> -->
+                                            <div>OPEN : </div>
+                                            <div>CLOSE : </div>
+                                          <!--  <i class="fas fa-map-marker-alt"></i> 지도 -->
                                         </div>
+ 
+                                        <div class="row bullets" id="wek">
+                                            <!-- Bottom switcher of slider -->
+                                                <div class="i1 thumbnail"  id="carousel-selector-0">
+                                                   
+                                                        <img src="">
+                                                  
+                                                </div>
+                    
+                                            
+                                                <div class="i1 thumbnail" id="carousel-selector-1">
+                                            
+                                                        <img src="">
+                                                  
+                                                </div>
+                                                      
+                                         </div>
 
                                     </div>
+
+
+
+
+                                </div>
     
+                            </div>
                                    
                                   
-                                </div>
                             </div>
                         </div>
                     </div><!--/Slider-->
     
-                    <div class="row hidden-xs" id="slider-thumbs">
-                            <!-- Bottom switcher of slider -->
-                            <ul class="hide-bullets">
-                                <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-0">
-                                        <img src="">
-                                    </a>
-                                </li>
-    
-                                <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-1">
-                                        <img src="">
-                                    </a>
-                                </li>
-    
-                                <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/170x100&text=three"></a>
-                                </li>
-    
-                                <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/170x100&text=four"></a>
-                                </li>
-    
-                                <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-4"><img src="http://placehold.it/170x100&text=five"></a>
-                                </li>
-    
-                                <li class="col-sm-2">
-                                    <a class="thumbnail" id="carousel-selector-5"><img src="http://placehold.it/170x100&text=six"></a>
-                                </li>
-                            </ul>                 
-                    </div>
+                    
             </div>
     </div>
         <script src="detailboot2/js/jquery.min.js"></script>
@@ -232,7 +242,7 @@
        <!-- 게시된 리뷰 목록들  -->
        <c:if test='${fn:length(arr) != 0 }'>
             <c:forEach var="element" items="${arr }" varStatus="status">
-            
+            					      	 <!-- arr : DTO 배열 -->
             
             	<div class="review-wrap">
             
@@ -245,7 +255,8 @@
 	                </div>
                    
                     <button onclick="">수정</button><br>
-                    <button onclick="">삭제</button>
+                    <button onclick="chkDelete(${element.rno })">삭제</button>
+                  
     		        <!--
                         <script>
     					switch (${element.rstar }) {
@@ -265,11 +276,14 @@
 	                    ${element.rcontent } 
 	                </div>
 					<div class="reviewImg" style="width: 300px">
+					<c:if test="${element.rimg != null }">
+						<c:forEach var="img_src" items="${element.rimg }">
+							<img style="width: 100%; height: auto" src="${img_src }" />
+                        </c:forEach>
+					</c:if>
 					
-						<!-- <c:forEach var="j" begin="0" end="${fn:length(element.rimg) }">
-							<img style="width: 100%; height: auto" src="${element.rimg[i] }" />
-                        </c:forEach> -->
-                        <img style="width: 100%; height: auto" src="${element.rimg }" />
+						
+                        <%-- <img style="width: 100%; height: auto" src="${element.rimg }" /> --%>
                         
 					</div>
           
@@ -358,16 +372,16 @@
  						<button type="button" id="btnAdd"><i class="fas fa-camera"></i></button>
                         <button type="submit" class="review-submit"> 입력 </button>
                             <div id="files"></div>
-                        <div style="background-color: beige; padding:2px 10px; margin-bottom: 5px; border: 1px solid #000;">
+                        <!-- <div style="background-color: beige; padding:2px 10px; margin-bottom: 5px; border: 1px solid #000;">
                             <h4>첨부파일</h4>
-                        </div>
+                        </div> -->
                 	
   	
 						<script>
 							var i = 0;
 							$("#btnAdd").click(function(){
 								$("#files").append("<div><input type='file' name = 'upfile" +i+ "'/><button type='button' onclick='$(this).parent().remove()'>삭제</button></div>");
-								// i++;
+								i++;
 							});
 						</script>
 		

@@ -14,20 +14,20 @@ public class DeleteCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;
 		WriteDAO dao = new WriteDAO();
-		FileDAO fileDao = new FileDAO();  //  첨부파일 
+	//	FileDAO fileDao = new FileDAO();  //  첨부파일 
 		
-		int uid = Integer.parseInt(request.getParameter("uid"));
+		int rno = Integer.parseInt(request.getParameter("rno"));
 		
 		try {
 			
-			fileDao.deleteByWrUid(uid, request);
+//			fileDao.deleteByWrUid(rno, request);
 			
-			cnt = dao.deleteByUid(uid);
+			cnt = dao.deleteByRno(rno);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("result", cnt);
+		request.setAttribute("delete", cnt);
 	}
 
 }

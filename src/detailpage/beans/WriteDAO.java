@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import detailpage.common.D;
@@ -155,12 +156,16 @@ public class WriteDAO {
 			
 			int rplace =rs.getInt("rplace");
 			int rstar = rs.getInt("rstar");
-//			String rimg[] = rs.getString("rimg").split("|");
-			String rimg = rs.getString("rimg");
+			String img = rs.getString("rimg");
+			String[] rimg = null;
+			if(img != null) {
+				rimg = img.split(";");
+			}
+//			String rimg = rs.getString("rimg");
 //			String rimg2 = rs.getString("rimg2");
 //			String rimg3 = rs.getString("rimg3");
 //			String rimg4 = rs.getString("rimg4");
-			
+			System.out.println(Arrays.toString(rimg));
 			WriteDTO dto = new WriteDTO(rno, rmno, rcontent, rdate, rplace, rstar, rimg);
 			dto.setRdate(rdate);
 			list.add(dto);
@@ -259,12 +264,12 @@ public class WriteDAO {
 	} // end update()
 	
 	
-	// 특정 uid 글 삭제하기
-	public int deleteByUid(int rno) throws SQLException {
+	// 특정 rno 글 삭제하기
+	public int deleteByRno(int rno) throws SQLException {
 		int cnt = 0;
 		
 		try {
-			pstmt = conn.prepareStatement(D.SQL_WRITE_DELETE_BY_UID);
+			pstmt = conn.prepareStatement(D.SQL_REVIEW_DELETE_BY_RNO);
 			pstmt.setInt(1, rno);
 			cnt = pstmt.executeUpdate();			
 		} finally {
@@ -272,7 +277,7 @@ public class WriteDAO {
 		}
 		
 		return cnt;
-	} // end deleteByUid()
+	} // end deleteByRno()
 	
 	
 }
